@@ -48,3 +48,24 @@ Have a cost implication as you interact with real APIs that may charge based on 
 
 Watch mode is an option that we can pass to jest asking to watch files that have changed since the last commit and execute test related only to those changed files.
 An optimization designed to make your tests run fast regardless of how many tests you have.
+
+<!-- Test Suit ==> 1 File is called one test suit -->
+
+## Filename conventions
+
+Files with .test.js or .test.tsx suffix
+Files with .spec.js or .spec.tsx suffix
+Files with .js or .tsx suffix in **tests** folders.
+
+## Alternate Alias
+
+test ==> it
+test.only ==> fit
+test.skip ==> xit
+
+## Coverage
+
+Satement coverage
+Branched coverage
+Function coverage
+Line coverage
