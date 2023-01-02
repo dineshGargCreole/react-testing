@@ -69,3 +69,55 @@ Satement coverage
 Branched coverage
 Function coverage
 Line coverage
+
+## What to test?
+
+1. Test component renders
+2. Test component renders with props
+3. Test component renders in different states
+4. Test component reacts to events
+
+## what not to test?
+
+1. Implementation details
+2. Third party code
+3. Code that is not imortant from a user point of view
+
+<!-- ----------------------------------------------------------------------------------------------------------- -->
+
+## RTL Queries
+
+Every test we write generally involves the following basic steps:
+
+1. Render the component
+2. Find an element rendered by the component
+3. Assert againt the element found in step 2 which will pass or fail in the test
+
+To render the component, we use the render method from RTL.
+For assertion, we use expect passing in a value and combine it with a matcher function from jest or jest-dom.
+
+queries are the methods that Testing Library provides to find elements on page.
+To find a single elment on the page, we have:
+getBy.., queryBy.., findBy..
+To find multiple elements on the page, we have:
+getAllBy.., queryAllBy.., findAllBy..
+
+The suffix can be one of Role, LabelText, PlaceHolderText, Text, DisplayValue, AltText, Title and finally TestId
+
+## getBy.. queries
+
+getBy.. class of queries return the matching node for a query, and throw a descriptive error if no elements match or if more than one match is found
+
+## Priority Order for Queries
+
+Your test should resemble how users interact with your code (component, page etc.) as mush as possible.
+
+1. getByRole
+2. getByLabelText
+3. getByPlaceholderText
+4. getByText
+5. getByDisplayValue
+6. getByAltText
+7. getByTitle
+8. getByTestId
+<!-- ---------------------------------------------------------------------------------------------- -->
