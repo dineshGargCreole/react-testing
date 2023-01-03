@@ -121,3 +121,56 @@ Your test should resemble how users interact with your code (component, page etc
 7. getByTitle
 8. getByTestId
 <!-- ---------------------------------------------------------------------------------------------- -->
+
+## getAllByQueries ..
+
+getAllByRole etc..
+
+## TextMatch
+
+TextMatch represents a type which can be either a:
+
+1. string
+2. regex
+3. function
+
+<!-- TextMatch - string -->
+<div>Hello World</div>
+screen.getByText('Hello World')                     ---> full string match
+screen.getByText('llo Worl', {exact: false})        ---> substring match
+screen.getByText('Hello World', {exact: false})     ---> ignore case
+
+<!-- TextMatch - regex -->
+<div>Hello World</div>
+screen.getByText(/World/)           --> Substring match
+screen.getByText(/world/i)          --> Substring match, ignore case
+screen.getByText(/^ hello world$/i) --> Full string match, ignore case
+
+<!-- TextMatch - Custom function -->
+
+(content?: string, element?: Element|null) => boolean
+
+<div>Hello World</div>
+screen.getByText((content) => content.startsWith('Hello'))
+
+## queryBy and queryAllBy
+
+1. queryBy
+   Returns the matching node for a query and return null if no elements match
+   Useful for asserting an element that is not present
+   Throws an error if more than one match is found
+
+2. queryAllBy
+   Returns an array of all matching nodes for a query and return an empty array if no elements match
+
+## findBy and findAllBY
+
+1. findBy
+   Returns a Promise which resolves when an element is found which matches the given query
+   The Promise is rejected if no element is found or if more than one element is found after a default timeout of 1000ms
+
+2. findAllBy
+   Returns a Promise which resolves to an array of elements when any elements are found which match the given query
+   The Promise is rejected if no elements are found after a default timeout of 1000ms
+
+<!-- ------------------------------------------------------------------------------------------------------------- -->
