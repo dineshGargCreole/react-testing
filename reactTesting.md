@@ -174,3 +174,23 @@ screen.getByText((content) => content.startsWith('Hello'))
    The Promise is rejected if no elements are found after a default timeout of 1000ms
 
 <!-- ------------------------------------------------------------------------------------------------------------- -->
+
+## TextMatch
+
+1. string
+2. regex
+3. function
+
+String: <div>Hello World</div>
+screen.getByText("Hello World") // full string match
+screen.getByText("llo Worl", {exact: false}) // substring match
+screen.getByText("hello world", {exact: false}) //ignore case
+
+Regex: <div>Hello World</div>
+screen.getByText(/World/) // substring match
+screen.getByText(/world/i) // substring match, ignore case
+screen.getByText(/^ hello World$/i) // full string match, ignore case
+
+Custom Function: <div>Hello World</div>
+(content?: string, element?: Element | null) => boolean
+screen.getByText((content) => content.startsWith('Hello'))
