@@ -194,3 +194,31 @@ screen.getByText(/^ hello World$/i) // full string match, ignore case
 Custom Function: <div>Hello World</div>
 (content?: string, element?: Element | null) => boolean
 screen.getByText((content) => content.startsWith('Hello'))
+
+<!-- --------------------------------------------------------------------------------------------------------------------------------- -->
+
+## Manual Queries
+
+RTL Queries:
+
+1. getBy & getAllBy
+2. queryBy & queryAllBy
+3. findBy & findAllBy
+4. Manual quereis - you can use the regular querySelector DOM API to find elements
+
+const {container} = render(<MyComponent />)
+const foo = container.querySelector('[data-foo="bar"]')
+
+<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
+
+## User Interaction
+
+user-event:
+A companion library for testing library that simulates user interactions by dispatching the events that would happen if the interaction took place in browser
+It is the recomended way to test user interactions with RTL
+
+## fireEvent vs user-event
+
+fireEvent is a method from RTL which is used to dispatch DOM events
+user-event simulates full interactions, which fire multiple events and do additional checks along the way
+For example, we can dispatch the change event on an input field using fireEvent
