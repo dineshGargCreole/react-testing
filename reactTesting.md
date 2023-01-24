@@ -222,3 +222,16 @@ It is the recomended way to test user interactions with RTL
 fireEvent is a method from RTL which is used to dispatch DOM events
 user-event simulates full interactions, which fire multiple events and do additional checks along the way
 For example, we can dispatch the change event on an input field using fireEvent
+
+## user-event
+
+Pointer Interactions
+Convenience APIs:
+Mouse Events: click(), dblClick(), tripleClick(), hover(), unhover()
+
+Pointer APIs:
+pointer({keys: '[MouseLeft]'})
+pointer({keys: '[MouseLeft][Mouseright]'})
+pointer('[MouseLeft][Mouseright]')
+pointer('[MouseLeft>]')
+pointer('[/MouseLeft]')
