@@ -231,7 +231,28 @@ Mouse Events: click(), dblClick(), tripleClick(), hover(), unhover()
 
 Pointer APIs:
 pointer({keys: '[MouseLeft]'})
-pointer({keys: '[MouseLeft][Mouseright]'})
-pointer('[MouseLeft][Mouseright]')
+pointer({keys: '[MouseLeft][mouseright]'})
+pointer('[MouseLeft][mouseright]')
 pointer('[MouseLeft>]')
 pointer('[/MouseLeft]')
+
+## Keyboard Interaction
+
+Utility Api:
+type()
+clear()
+selectOptions()
+deselectOptions()
+upload()
+
+Convenience APIs:
+tab()
+
+Clipboard APIs:
+copy()
+cut()
+paste()
+
+Keyboard APIs:
+keyboard("foo") //translates to: f,o,o
+keyboard('{Shift>}A{/Shift}}') // translates to: Shift(down), A, Shift(up)
