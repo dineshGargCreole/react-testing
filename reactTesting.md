@@ -256,3 +256,16 @@ paste()
 Keyboard APIs:
 keyboard("foo") //translates to: f,o,o
 keyboard('{Shift>}A{/Shift}}') // translates to: Shift(down), A, Shift(up)
+
+<!-- ------------------------------------------------------------------------------------------------------------------- -->
+
+## Static Analysis Testing
+
+Testing checks if your code works or not, whereas static analysis checks if it is written well or not.
+Tools:
+
+1. TypeScript
+2. ESlint
+3. Prettier
+4. Husky
+5. lint-staged

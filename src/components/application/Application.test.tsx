@@ -37,6 +37,7 @@ describe("application", () => {
 
     const submitButtonElement = screen.getByRole("button");
     expect(submitButtonElement).toBeInTheDocument();
+    expect(submitButtonElement).toBeDisabled();
 
     // getByLabelText querry method
     const nameElement2 = screen.getByLabelText("Name");
